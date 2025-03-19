@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#reservation">Reservation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="section">
+        <h1 style="background-color: orange;">VENU Restaurant</h1>
+        <p>Experience the best food and service!</p>
+    </section>
+
+    <section id="menu" class="section">
+        <h2>Our Menu</h2>
+        <div class="menu-item">
+            <h3 style="background-color:violet;">Dosa</h3>
+            <p>Dosa with sambar , chutney</p>
+            <p>120</p>
+        </div>
+        <div class="menu-item">
+            <h3 style="background-color:blue;">parotta</h3>
+            <p>parotta with salna, pancetta, and parmesan</p>
+            <p>30</p>
+        </div>
+        <div class="menu-item">
+            <h3 style="background-color:yellow;">Poori</h3>
+            <p>poori with sauce , chutney</p>
+            <p>50</p>
+        </div>
+        <div class="menu-item">
+            <h3 style="background-color:greenyellow;">chicken fry</h3>
+            <p>chicken fry</p>
+            <p>230</p>
+        </div>
+        <div class="menu-item">
+            <h3 style="background-color:red;">Meals</h3>
+            <p>Meals</p>
+            <p>150</p>
+        </div>
+        <!-- Add more menu items here -->
+    </section>
+
+    <section id="reservation" class="section">
+        <h2>Make a Reservation</h2>
+        <form id="reservation-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+            <label for="people">Number of People:</label>
+            <input type="number" id="people" name="people" required>
+            <button type="submit">Reserve Table</button>
+        </form>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>Email: kiranchellaperumal1112@gmail.com</p>
+        <p>Phone: 7418927117</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Restaurant Name. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+ /* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and general styles */
+body {
+    font-family: 'Times New Roman', Times serif;
+    line-height: 2.6;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section {
+    padding: 50px 0%;
+    text-align: center;
+}
+
+/* Menu section styles */
+#menu .menu-item {
+    margin-bottom: 20px;
+}
+
+#menu h3 {
+    color: #333;
+}
+
+/* Reservation form styles */
+#reservation-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#reservation-form input, #reservation-form button {
+    margin: 10px;
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+</style>
+<script>
+document.getElementById('reservation-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get form data
+    const name = document.getElementById('name').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const people = document.getElementById('people').value;
+
+    // Simple confirmation message (you can connect this to a back-end later)
+    alert(`Reservation Confirmed!\nName: ${name}\nDate: ${date}\nTime: ${time}\nPeople: ${people}`);
+    
+    // Optionally clear form after submission
+    document.getElementById('reservation-form').reset();
+});
+</Script>
